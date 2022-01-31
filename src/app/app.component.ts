@@ -9,10 +9,10 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
   title = 'book-share';
-  item$ = new Observable<any>();
+  book$ = new Observable<any>();
 
   constructor(private db: AngularFireDatabase) {
-    // firebaseに定義されているtestという名前のテーブルの値を参照します。
-    this.item$ = db.object('/test').valueChanges();
+    // firebaseに定義されているbookという名前のテーブルの値を参照します。
+    this.book$ = db.object('/book').valueChanges();
   }
 }
