@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "book-share-8a3e8": {
+      "hosting": {
+        "book-share": [
+          "book-share-8a3e8"
+        ]
+      }
+    }
+  }
+}
