@@ -1,12 +1,2 @@
 <app-header></app-header>
-
-<div>
-  BookShare
-  <div *ngIf="book$ | async as book">
-    {{ book.book_name.author }}
-    {{ book.book_name.category }}
-    {{ book.book_name.author }}
-    {{ book.book_name.amazon_url }}
-  </div>
-</div>
-
+<router-outlet></router-outlet>
