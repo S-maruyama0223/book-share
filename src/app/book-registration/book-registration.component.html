@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>本の登録</h1>
+    <form>
+      <div>
+        <label>著書名</label>
+        <div>
+          <input placeholder="著書名" type="text" id="name" required> 
+        </div>
+        <label>作者名</label>
+        <div>
+          <input placeholder="作者名" type="text" id="author" required> 
+        </div>
+        <label>投稿者</label>
+        <div>
+          <input placeholder="投稿者" type="text" id="contributor" required> 
+        </div>
+        <label>カテゴリ</label>
+        <div>
+            <select id="department" placeholder="カテゴリ" required>
+            <option *ngFor="let bookCategory of bookCategories" [value]="bookCategory">
+                {{bookCategory}}</option>
+            </select>
+        </div>    
+        <label>AmazonのURL</label>
+        <div>
+          <input placeholder="URL" type="text" id="amazon-url" > 
+        </div>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
