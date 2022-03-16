@@ -1,0 +1,7 @@
+<div class="home">
+  <div *ngIf="book$ | async as book">
+    <p>
+      {{ book.book_name.author }}さんが書籍『{{ book.book_name.name }}』を登録しました。
+    </p>
+  </div>
+</div>
