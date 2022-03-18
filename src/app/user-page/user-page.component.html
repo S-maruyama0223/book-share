@@ -1,0 +1,13 @@
+<div *ngIf="user">
+  <div class="user-header">
+    <p>
+      {{ user.name }}のページ
+    </p>
+  </div>
+  <div *ngIf="user.books" class="books">
+    <p>登録した書籍一覧</p>
+    <ul *ngFor="let book of user.books">
+      <li>{{book.title}}</li>
+    </ul>
+  </div>
+</div>

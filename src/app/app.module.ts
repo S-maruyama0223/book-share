@@ -10,9 +10,16 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AngularSampleComponent } from './angular-sample/angular-sample.component';
+import { UserPageComponent } from './user-page/user-page.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, AngularSampleComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    AngularSampleComponent,
+    UserPageComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
