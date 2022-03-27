@@ -4,26 +4,27 @@
       <div>
         <label>著書名</label>
         <div>
-          <input placeholder="著書名" type="text" id="name" required> 
+          <input placeholder="著書名" type="text" id="title" required
+          [(ngModel)]="model.title">
         </div>
         <label>作者名</label>
         <div>
-          <input placeholder="作者名" type="text" id="author" required> 
+          <input placeholder="作者名" type="text" id="author" required [(ngModel)]="model.author"> 
         </div>
         <label>投稿者</label>
         <div>
-          <input placeholder="投稿者" type="text" id="contributor" required> 
+          <input placeholder="投稿者" type="text" id="contributor" required [(ngModel)]="model.contributor"> 
         </div>
         <label>カテゴリ</label>
         <div>
-            <select id="department" placeholder="カテゴリ" required>
-            <option *ngFor="let bookCategory of bookCategories" [value]="bookCategory">
+            <select id="book-category" placeholder="カテゴリ" required>
+            <option *ngFor="let bookCategory of bookCategories" [value]="bookCategory" [(ngModel)]="model.bookCategory">
                 {{bookCategory}}</option>
             </select>
         </div>    
         <label>AmazonのURL</label>
         <div>
-          <input placeholder="URL" type="text" id="amazon-url" > 
+          <input placeholder="URL" type="text" id="amazon-url" [(ngModel)]="model.bookCategory"> 
         </div>
       </div>
       <button type="submit">Submit</button>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Constants } from '../common/constants';
+import { BookModel } from '../model/book-model';
 
 @Component({
   selector: 'app-book-registration',
@@ -14,5 +15,6 @@ export class BookRegistrationComponent implements OnInit {
   }
 
   public bookCategories: string[] = Constants.BOOK_CATEGORIES;
+  public model: BookModel = new BookModel('', '', '', '', '');
 
 }

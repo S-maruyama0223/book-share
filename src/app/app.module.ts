@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AngularSampleComponent } from './angular-sample/angular-sample.component';
 import { BookRegistrationComponent } from './book-registration/book-registration.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, HomeComponent, AngularSampleComponent, BookRegistrationComponent],
@@ -20,6 +21,7 @@ import { BookRegistrationComponent } from './book-registration/book-registration
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
