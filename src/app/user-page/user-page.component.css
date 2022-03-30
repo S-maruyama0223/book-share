@@ -1,3 +1,95 @@
 .user-header {
   text-align: center;
 }
+.user-logo {
+  background-color: cadetblue;
+  position: relative;
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 20px;
+}
+.user-logo-name {
+  position: absolute;
+  top: 0.8em;
+  left: 10px;
+  right: 0;
+  bottom: 0;
+  font-size: 55px;
+  letter-spacing: 10px;
+  color: rgb(200, 200, 200);
+}
+.registerd-books {
+  padding-top: 40px;
+}
+.book {
+  border-bottom: 1px solid;
+  border-color: grey;
+  margin-bottom: 10px;
+  padding-top: 5px;
+}
+.tab_wrap {
+  width: 75%;
+  margin: 80px auto;
+}
+input[type="radio"] {
+  display: none;
+}
+.tab_area {
+  font-size: 0;
+}
+.tab_area label {
+  width: 33%;
+  display: inline-block;
+  padding: 12px 0;
+  color: #999;
+  text-align: center;
+  font-size: 13px;
+  cursor: pointer;
+  transition: ease 0.2s opacity;
+}
+.tab_area label:hover {
+  opacity: 0.5;
+}
+.panel_area {
+  background: #fff;
+}
+.tab_panel {
+  width: 100%;
+  display: none;
+}
+.tab_panel p {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+#tab1:checked ~ .tab_area .tab1_label {
+  background: #fff;
+  color: #000;
+  border-bottom: 1px solid;
+  border-color: rgb(41, 135, 236);
+}
+#tab1:checked ~ .panel_area #panel1 {
+  display: block;
+}
+#tab2:checked ~ .tab_area .tab2_label {
+  background: #fff;
+  color: #000;
+  border-bottom: 1px solid;
+  border-color: rgb(41, 135, 236);
+}
+#tab2:checked ~ .panel_area #panel2 {
+  display: block;
+}
+#tab3:checked ~ .tab_area .tab3_label {
+  background: #fff;
+  color: #000;
+  border-bottom: 1px solid;
+  border-color: rgb(41, 135, 236);
+}
+#tab3:checked ~ .panel_area #panel3 {
+  display: block;
+}

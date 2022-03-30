@@ -1,13 +1,34 @@
 <div *ngIf="user">
   <div class="user-header">
-    <p>
-      {{ user.name }}のページ
-    </p>
+      <div class="user-logo">
+        <span class="user-logo-name">{{ logoName }}</span>
+      </div>
+      {{ user.firstName + '　' +  user.lastName }}
   </div>
-  <div *ngIf="user.books" class="books">
-    <p>登録した書籍一覧</p>
-    <ul *ngFor="let book of user.books">
-      <li>{{book.title}}</li>
-    </ul>
+
+  <div class="tab_wrap">
+    <input *ngIf="user.books" id="tab1" type="radio" name="tab_btn" checked>
+    <input id="tab2" type="radio" name="tab_btn">
+    <input id="tab3" type="radio" name="tab_btn">
+
+    <div class="tab_area">
+      <label *ngIf="user.books" class="tab1_label" for="tab1">登録した書籍</label>
+      <label class="tab2_label" for="tab2">借りてる書籍</label>
+      <label class="tab3_label" for="tab3">いいね</label>
+    </div>
+    <div class="panel_area">
+      <div *ngIf="user.books" id="panel1" class="tab_panel">
+        <div *ngIf="user.books" class="registerd-books">
+          <div *ngFor="let book of user.books" class="book">
+            <span>{{book.title}}</span>
+          </div>
+        </div>
+      <div id="panel2" class="tab_panel">
+        <p>panel2</p>
+      </div>
+      <div id="panel3" class="tab_panel">
+        <p>panel3</p>
+      </div>
+    </div>
   </div>
 </div>

@@ -7,6 +7,7 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/firestore';
 import { Book } from '../models/Book';
+import { UserPageService } from '../user-page.service';
 
 @Component({
   selector: 'app-user-page',
@@ -18,9 +19,10 @@ export class UserPageComponent implements OnInit {
   private usersCollection: AngularFirestoreCollection<User>;
   private bookDoc: AngularFirestoreDocument<Book>;
   private booksCollection: AngularFirestoreCollection<Book>;
+  logoName = '';
   user: User | undefined;
 
-  constructor(private afs: AngularFirestore) {
+  constructor(private afs: AngularFirestore, private service: UserPageService) {
     this.userDoc = afs.doc<User>('users/maruyama');
     this.usersCollection = afs.collection<User>('Users');
     this.bookDoc = afs.doc<Book>('users/maruyama/books/readble_code');
@@ -29,6 +31,10 @@ export class UserPageComponent implements OnInit {
     this.userDoc.valueChanges().subscribe((user) => {
       if (user) {
         this.user = user;
+        this.logoName = service.createUserLogoName(
+          this.user.firstName,
+          this.user.lastName
+        );
       }
     });
     this.booksCollection.valueChanges().subscribe((books) => {
@@ -42,7 +48,8 @@ export class UserPageComponent implements OnInit {
 }
 
 interface User {
-  name: string;
+  firstName: string;
+  lastName: string;
   department: string;
   books: Array<Book>;
 }
