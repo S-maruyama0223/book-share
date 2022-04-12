@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+input {
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #9d9f9a;
+  height: 40px;
+  width: 280px;
+  font-size: 18px;
+  letter-spacing: 0.3em;
+}
+
+input:focus {
+  outline: none; /* 輪郭線(borderの内側)*/
+  border: 2px solid;
+  border-color: rgb(61, 154, 235);
+}
+
+select,
+option {
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #9d9f9a;
+  height: 40px;
+  width: 280px;
+  font-size: 18px;
+  letter-spacing: 0.3em;
+}

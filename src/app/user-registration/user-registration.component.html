@@ -1,0 +1,35 @@
+
+<h1>ユーザー登録</h1>
+<div class="input-area">
+  <div class="form-item">
+    <p class="form-label">
+      <label for="firstName">姓</label>
+    </p>
+    <input type="text" id="firstName" class="form-input" [(ngModel)]="firstName" >
+  </div>
+  <div class="form-item">
+    <p class="form-label">
+      <label for="lastName">名</label>
+    </p>
+    <input type="text" id="lastName" [(ngModel)]="lastName">
+  </div>
+  <div class="form-item">
+    <p class="form-label">
+      <label for="division">拠点</label>
+    </p>
+    <select id="division" [(ngModel)]="selectedDivision">
+      <ng-container *ngFor="let division of divisionValues">
+        <option value="{{ division }}" [selected]="selectedDivision == '{{ division }}'"> {{ division }} </option>
+      </ng-container>
+    </select>
+  </div>
+  <div class="form-item">
+    <p class="form-label">
+      <label for="department">所属</label>
+    </p>
+    <input type="text" id="department" [(ngModel)]="department" placeholder="DSU/AMU/MTL...">
+  </div>
+  <div class="form-item">
+    <button (click)="registerUser()">登録</button>
+  </div>
+</div>

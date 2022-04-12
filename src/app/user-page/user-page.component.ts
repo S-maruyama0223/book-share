@@ -8,6 +8,7 @@ import {
 } from '@angular/fire/firestore';
 import { Book } from '../models/Book';
 import { UserPageService } from '../user-page.service';
+import { User } from '../models/User';
 
 @Component({
   selector: 'app-user-page',
@@ -23,6 +24,7 @@ export class UserPageComponent implements OnInit {
   user: User | undefined;
 
   constructor(private afs: AngularFirestore, private service: UserPageService) {
+    // TODO: URLのIDから取得
     this.userDoc = afs.doc<User>('users/maruyama');
     this.usersCollection = afs.collection<User>('Users');
     this.bookDoc = afs.doc<Book>('users/maruyama/books/readble_code');
@@ -45,11 +47,4 @@ export class UserPageComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-}
-
-interface User {
-  firstName: string;
-  lastName: string;
-  department: string;
-  books: Array<Book>;
 }
