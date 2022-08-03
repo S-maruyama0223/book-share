@@ -3,6 +3,7 @@ import { AngularFireModule } from '@angular/fire';
 import { BrowserModule } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { AngularSampleComponent } from './angular-sample/angular-sample.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { RegisterBookComponent } from './register-book/register-book.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,8 @@ import { UserRegistrationComponent } from './user-registration/user-registration
     AngularSampleComponent,
     UserPageComponent,
     UserRegistrationComponent,
+    SignInComponent,
+    RegisterBookComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,7 @@ import { UserRegistrationComponent } from './user-registration/user-registration
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

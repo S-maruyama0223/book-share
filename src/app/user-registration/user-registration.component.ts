@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { Book } from '../models/Book';
 import { User } from '../models/User';
 import { Constants } from '../models/constants';
-import { RegisterFireStoreService } from '../register-fire-store.service';
+import { FireStoreService } from '../fire-store.service';
 
 @Component({
   selector: 'app-user-registration',
@@ -26,7 +26,7 @@ export class UserRegistrationComponent implements OnInit {
   constructor(
     private afs: AngularFirestore,
     private router: Router,
-    private registerService: RegisterFireStoreService
+    private firestoreService: FireStoreService
   ) {
     this.usersCollection = afs.collection('users');
   }
@@ -35,6 +35,7 @@ export class UserRegistrationComponent implements OnInit {
 
   registerUser(): void {
     const user = new User();
+    user.id = this.generateId();
     user.firstName = this.firstName;
     user.lastName = this.lastName;
     user.department = this.department;
@@ -42,8 +43,16 @@ export class UserRegistrationComponent implements OnInit {
     this.callRegisterUser(user);
   }
 
+  private generateId(): string {
+    const S = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const N = 4;
+    return Array.from(Array(N))
+      .map(() => S[Math.floor(Math.random() * S.length)])
+      .join('');
+  }
+
   private callRegisterUser(user: User): void {
-    this.registerService.registerUser(
+    this.firestoreService.registerUser(
       this.usersCollection,
       user,
       () => console.log('成功しました。'),

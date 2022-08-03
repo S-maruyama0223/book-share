@@ -1,7 +1,23 @@
 <div class="home">
-  <div *ngIf="book$ | async as book">
-    <p>
-      {{ book.book_name.author }}さんが書籍『{{ book.book_name.name }}』を登録しました。
-    </p>
-  </div>
+  <ng-container *ngIf="bookArray.length > 0">
+    <!--keyvalueパイプを入れるとオブジェクトをngForで展開できる-->
+    <div *ngFor="let book of bookArray; let i = index" class="book">
+      <div class="icon">
+        <div class="icon-char">
+          {{ titleChars[i] }}
+        </div>
+      </div>
+      <span class="name">
+          {{ book.name }}
+      </span><br>
+      <span class="title">
+        {{ book.title }}
+      </span><br>
+      <div class="like">
+        <!--bookのいいねがtrueの場合のみheart-animationを付与-->
+        <div class="heart-icon" (click)="like(i)" [ngClass]="{'heart-animation': bookArray[i].like}"></div>
+        <span>いいね</span>
+      </div>
+    </div>
+  </ng-container>
 </div>

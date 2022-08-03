@@ -24,7 +24,6 @@ export class UserPageComponent implements OnInit {
   user: User | undefined;
 
   constructor(private afs: AngularFirestore, private service: UserPageService) {
-    // TODO: URLのIDから取得
     this.userDoc = afs.doc<User>('users/maruyama');
     this.usersCollection = afs.collection<User>('Users');
     this.bookDoc = afs.doc<Book>('users/maruyama/books/readble_code');

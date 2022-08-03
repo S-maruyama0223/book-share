@@ -1,0 +1,100 @@
+.home {
+  display: flex;
+  padding: 10px;
+  height: 75vh;
+}
+
+.book {
+  margin: 5px 10px 5px 10px;
+  width: 15%;
+  height: 55%;
+  border: 1px solid #000;
+}
+
+.icon {
+  background-color: rgb(85, 190, 251);
+  width: 70%;
+  height: 55%;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-char {
+  text-align: center;
+  color: #FFF;
+  font-size: 45px;
+}
+
+.name {
+  margin-left: 2em;
+  position: relative;
+}
+
+.name::before {
+  content: url(../../assets/icon/human.png);
+  position: absolute;
+  left: -1.8em;
+}
+
+.title {
+  margin-left: 2em;
+  position: relative;
+}
+
+.title::before {
+  content: url(../../assets/icon/book.png);
+  position: absolute;
+  left: -1.95em;
+}
+
+.like{
+  position: relative;
+  margin: 10px 0.5em 0px 0px;
+  text-align: right;
+}
+
+/* .heart-icon{
+  margin: 5px 5px 0 2em;
+  text-align: right;
+  position: relative;
+} */
+
+.heart-icon {
+  content: '';
+  position: absolute;
+  top:-28px;
+  right: 1.5em;
+  background: url("../../assets/icon/heart_animation_icon.png");
+  background-position: left;
+  background-size: 2900%;
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+}
+
+@keyframes heartbring {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+.heart-animation {
+  display: inline-block;
+  background-position: right;
+  -webkit-animation-name: heartbring;
+  animation-name: heartbring;
+  -webkit-animation-duration: .8s;
+  animation-duration: .8s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-timing-function: steps(28);
+  animation-timing-function: steps(28);
+}
